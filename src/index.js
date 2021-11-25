@@ -9,6 +9,8 @@ import {
 	Navigate,
 	Link,
 	Outlet,
+	useParams,
+	NavLink,
 } from "react-router-dom";
 
 ReactDOM.render(
@@ -49,13 +51,24 @@ function Learn() {
 }
 
 function Courses() {
+	const courseList = ["React", "Angular", "vue", "node.js"];
+	const randomCourseLink =
+		courseList[Math.floor(Math.random() * courseList.length)];
 	return (
 		<div>
 			<h1>This one is My Course List </h1>
 			<h4>Courses Card</h4>
+
+			<p>More test </p>
+
+			<NavLink to={`/learn/courses/${randomCourseLink}`}>
+				{randomCourseLink}
+			</NavLink>
+			<Outlet />
 		</div>
 	);
 }
+
 function Bundles() {
 	return (
 		<div>
@@ -64,10 +77,12 @@ function Bundles() {
 		</div>
 	);
 }
+
 function CourseId() {
+	const { courseId } = useParams();
 	return (
 		<div>
-			<h1>URL Params is : ___ </h1>
+			<h1>URL Params is :{courseId}</h1>
 		</div>
 	);
 }
