@@ -33,6 +33,7 @@ function Home() {
 	return (
 		<div>
 			<h1>Home route</h1>
+			<Link to="/learn">Learn</Link>
 		</div>
 	);
 }
@@ -41,6 +42,7 @@ function Learn() {
 	return (
 		<div>
 			<h1>Learn</h1>
+			<Link to="/">Home</Link>
 			<h4>This is a learning of react - router </h4>
 			<Link to="/learn/courses">Courses</Link>
 			<br />
@@ -58,9 +60,10 @@ function Courses() {
 		<div>
 			<h1>This one is My Course List </h1>
 			<h4>Courses Card</h4>
-
-			<p>More test </p>
-
+			<p>
+				We have variety of Courses that can be used to help you understand the
+				subjects better.
+			</p>{" "}
 			<NavLink to={`/learn/courses/${randomCourseLink}`}>
 				{randomCourseLink}
 			</NavLink>
@@ -74,6 +77,10 @@ function Bundles() {
 		<div>
 			<h1>This one is My Bundle List </h1>
 			<h4>Bundles Card</h4>
+			<p>
+				We have variety of Bundles that can be used to help you understand the
+				subjects better
+			</p>
 		</div>
 	);
 }
@@ -86,4 +93,5 @@ function CourseId() {
 		</div>
 	);
 }
+
 reportWebVitals();
